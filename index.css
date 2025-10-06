@@ -22,6 +22,10 @@ p, span, label, h1, h2, h3, h4, h5, h6, div, button, option, select, input {
     /* Background properties moved to .screen to fix transition glitch */
 }
 
+#splashScreen {
+    background-image: linear-gradient(to bottom, #000000, #991b1b);
+}
+
 .logo-text {
     font-weight: 800;
     letter-spacing: -0.05em;
@@ -44,8 +48,6 @@ p, span, label, h1, h2, h3, h4, h5, h6, div, button, option, select, input {
     overflow-y: auto;
     background-color: #000000;
     background-image: linear-gradient(to bottom, #000000, #991b1b);
-    background-size: 100% 400px;
-    background-repeat: no-repeat;
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     -webkit-overflow-scrolling: touch;
 }
@@ -334,40 +336,3 @@ p, span, label, h1, h2, h3, h4, h5, h6, div, button, option, select, input {
 #carga-history-list::-webkit-scrollbar-thumb:hover {
   background: #6b7280;
 }
-
-/* === ESTILOS NUTRICIONISTA IA === */
-.energy-card {
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.meal-card {
-    background-color: #1f2937; /* gray-800 */
-    border-left: 4px solid #ef4444; /* red-500 */
-    padding: 1rem;
-    border-radius: 0.5rem;
-}
-
-.meal-card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.meal-card-macros {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0.75rem;
-    text-align: center;
-    margin-top: 0.75rem;
-    padding-top: 0.75rem;
-    border-top: 1px solid #374151; /* gray-700 */
-}
-
-.meal-card-macros div span {
-    font-size: 0.75rem;
-    opacity: 0.8;
-}
-
-.meal-card-macros div p {
-    font-weight: bold;
-}s

@@ -458,7 +458,6 @@ function renderStudentProfile(email) {
         <button data-target="outdoorSelectionScreen" class="bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 px-2 rounded-xl flex flex-col items-center justify-center space-y-1 transition text-center"><i data-feather="sun"></i><span class="text-xs">Outdoor</span></button>
         <button data-target="weightControlScreen" id="weight-control-btn" class="bg-purple-500 hover:bg-purple-600 text-white font-bold py-3 px-2 rounded-xl flex flex-col items-center justify-center space-y-1 transition text-center"><i data-feather="bar-chart-2"></i><span class="text-xs">Peso</span></button>
         <button data-target="aiAnalysisScreen" id="ai-analysis-btn" class="bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 px-2 rounded-xl flex flex-col items-center justify-center space-y-1 transition text-center"><i data-feather="cpu"></i><span class="text-xs">Análise IA</span></button>
-        <button data-target="iaNutritionistScreen" id="ia-nutritionist-btn" class="bg-lime-600 hover:bg-lime-700 text-white font-bold py-3 px-2 rounded-xl flex flex-col items-center justify-center space-y-1 transition text-center"><i data-feather="heart"></i><span class="text-xs">Nutri IA</span></button>
         <button data-target="physioAssessmentScreen" id="physio-btn" class="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-3 px-2 rounded-xl flex flex-col items-center justify-center space-y-1 transition text-center"><i data-feather="users"></i><span class="text-xs">Avaliação</span></button>
     `;
     feather.replace();
@@ -479,8 +478,6 @@ function renderStudentProfile(email) {
                 renderRunningScreen(email);
             } else if (targetScreenId === 'weightControlScreen') {
                 renderWeightControlScreen(email);
-            } else if (targetScreenId === 'iaNutritionistScreen') {
-                renderNutritionistScreen(email);
             } else if (targetScreenId === 'physioAssessmentScreen') {
                 initializePhysioAssessmentScreen();
             } else if (targetScreenId === 'outdoorSelectionScreen') {
@@ -1114,6 +1111,5 @@ async function updateWeather() {
 }
 // Placeholder functions for screens not yet implemented in detail
 function renderAiAnalysisScreen(email) { console.log("Rendering AI Analysis for", email); }
-function renderNutritionistScreen(email) { console.log("Rendering Nutritionist for", email); }
 function initializePhysioAssessmentScreen() { console.log("Initializing Physio Assessment"); }
 function initializeOutdoorSelectionScreen() { console.log("Initializing Outdoor Selection"); }

@@ -56,7 +56,7 @@
 <body class="overscroll-none">
 
     <!-- ======================= SPLASH SCREEN ======================= -->
-    <div id="splashScreen" class="w-full h-screen flex flex-col items-center justify-center bg-black">
+    <div id="splashScreen" class="w-full h-screen flex flex-col items-center justify-center">
         <div class="text-center">
             <h1 class="font-black text-8xl tracking-tighter">
                 <span class="text-red-600">AB</span><span class="text-white">FIT</span>
@@ -139,7 +139,7 @@
                 </div>
                 
                 <div class="text-center pt-8 pb-4">
-                    <p class="text-white text-xs">ABFIT Trainning v1.0</p>
+                    <p class="text-white text-xs"><span class="text-red-600 font-bold">AB</span><span class="font-bold">FIT</span> Trainning v1.0</p>
                     <p class="text-white text-xs">Desenvolvido por André Brito</p>
                 </div>
             </div>
@@ -181,67 +181,6 @@
             
                     <div id="ai-analysis-result" class="hidden text-left bg-gray-800 p-6 rounded-xl border border-gray-700 space-y-4">
                         <!-- AI results will be injected here -->
-                    </div>
-                </div>
-            </div>
-
-             <!-- ======================= TELA NUTRICIONISTA IA ======================= -->
-            <div id="iaNutritionistScreen" class="screen p-6">
-                <header class="flex items-center justify-between pt-6 pb-4">
-                    <button class="back-btn p-2 rounded-full hover:bg-gray-800" data-target="studentProfileScreen">
-                        <i data-feather="arrow-left" class="text-white"></i>
-                    </button>
-                    <h1 class="text-2xl font-bold text-white">Nutricionista IA</h1>
-                    <div class="w-10"></div>
-                </header>
-                <div class="space-y-6 pb-24">
-                    <!-- Balanço Energético -->
-                    <div class="bg-gray-800 p-4 rounded-xl border border-gray-700">
-                        <h2 class="text-lg font-bold text-white mb-3">Balanço Energético Diário</h2>
-                        <div id="energy-balance-summary" class="grid grid-cols-3 gap-3 text-center">
-                            <div class="energy-card bg-green-800/50 p-3 rounded-lg">
-                                <span class="text-xs">Consumido</span>
-                                <p id="calories-in" class="font-bold text-xl">0</p>
-                                <span class="text-xs">kcal</span>
-                            </div>
-                            <div class="energy-card bg-blue-800/50 p-3 rounded-lg">
-                                <span class="text-xs">Gasto Estimado</span>
-                                <p id="calories-out" class="font-bold text-xl">0</p>
-                                <span class="text-xs">kcal</span>
-                            </div>
-                            <div class="energy-card bg-purple-800/50 p-3 rounded-lg">
-                                <span class="text-xs">Balanço</span>
-                                <p id="calories-balance" class="font-bold text-xl">0</p>
-                                <span class="text-xs">kcal</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Análise Nutricional -->
-                    <div class="bg-gray-800 p-4 rounded-xl border border-gray-700">
-                        <h2 class="text-lg font-bold text-white mb-3">Análise Nutricional IA</h2>
-                        <p class="text-sm mb-4">Receba uma análise completa do seu consumo e recomendações personalizadas.</p>
-                        <button id="generate-nutrition-analysis-btn" class="w-full bg-lime-600 hover:bg-lime-700 text-white font-bold py-3 rounded-xl flex items-center justify-center space-x-2 transition shadow-lg">
-                            <i data-feather="pie-chart"></i> <span>Gerar Análise Nutricional</span>
-                        </button>
-                        <div id="nutrition-analysis-spinner" class="hidden text-center p-4">
-                            <div class="loader inline-block"></div>
-                            <p class="mt-2 text-white text-sm">Analisando seus dados...</p>
-                        </div>
-                        <div id="nutrition-analysis-result" class="hidden text-sm mt-4 p-4 bg-gray-900 rounded-lg"></div>
-                    </div>
-
-                    <!-- Registro de Refeições -->
-                    <div class="bg-gray-800 p-4 rounded-xl border border-gray-700">
-                        <div class="flex justify-between items-center mb-4">
-                            <h2 class="text-lg font-bold text-white">Refeições de Hoje</h2>
-                            <button id="log-meal-btn" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-3 rounded-lg text-sm flex items-center space-x-2">
-                                <i data-feather="plus-circle" class="w-4 h-4"></i> <span>Registrar</span>
-                            </button>
-                        </div>
-                        <div id="todays-meals-list" class="space-y-3">
-                           <p class="text-center text-sm p-4">Nenhuma refeição registrada hoje.</p>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -692,37 +631,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-
-    <!-- Modal de Registro de Refeição -->
-    <div id="mealLogModal" class="modal fixed inset-0 bg-black bg-opacity-70 z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-gray-800 text-white rounded-2xl shadow-xl w-full max-w-md p-6 relative" id="meal-log-modal-content">
-            <button id="closeMealLogModalBtn" class="absolute top-4 right-4 text-white hover:text-white"><i data-feather="x"></i></button>
-            <h3 class="text-2xl font-bold mb-4 text-white">Registrar Refeição</h3>
-            <form id="meal-log-form">
-                <div class="mb-4">
-                    <label for="meal-type" class="block text-sm font-medium text-white mb-2">Tipo de Refeição</label>
-                    <select id="meal-type" class="w-full p-3 border border-gray-600 bg-gray-700 text-white rounded-lg">
-                        <option>Café da Manhã</option>
-                        <option>Almoço</option>
-                        <option>Jantar</option>
-                        <option>Lanche</option>
-                    </select>
-                </div>
-                <div class="mb-4">
-                    <label for="meal-description" class="block text-sm font-medium text-white mb-2">O que você comeu?</label>
-                    <textarea id="meal-description" rows="4" class="w-full p-3 border border-gray-600 bg-gray-700 text-white rounded-lg" placeholder="Ex: 1 filé de frango grelhado (150g), 1 xícara de arroz branco, salada de alface e tomate."></textarea>
-                </div>
-                <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-xl flex items-center justify-center space-x-2 transition">
-                    <i data-feather="cpu"></i> <span>Analisar e Adicionar</span>
-                </button>
-                <div id="meal-analysis-spinner" class="hidden text-center p-4">
-                    <div class="loader inline-block"></div>
-                    <p class="mt-2 text-white text-sm">Analisando refeição...</p>
-                </div>
-            </form>
         </div>
     </div>
 
